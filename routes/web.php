@@ -5,6 +5,7 @@ use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\SesionController;
 use App\Http\Controllers\SecureurlController;
 use App\Http\Controllers\CerrarSesionController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +25,9 @@ Route::get('/', function () {
 Route::get('/registro', [RegistroController::class, 'index'])->name("registrarse");
 Route::post('/registro', [RegistroController::class, 'store']);
 
-Route::get('vistausuario', [SecureurlController::class, 'index'])->name("accesoseguro");
-
 Route::get('/login', [SesionController::class, 'index'])->name("login");
 Route::post('/login', [SesionController::class, 'store']);
+
+Route::get('/{user:username}', [SecureurlController::class, 'index'])->name("accesoseguro");
 
 Route::post('/logout', [CerrarSesionController::class, 'store'])->name('logout');

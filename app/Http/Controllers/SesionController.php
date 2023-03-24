@@ -25,6 +25,6 @@ class SesionController extends Controller
             return back()->with('mensaje', 'Usuario o contraseña incorrecta');
         }
 
-        return redirect()->route('accesoseguro');
+        return redirect()->route('accesoseguro', ['user'=>auth()->user()->username]);
     }
 }
