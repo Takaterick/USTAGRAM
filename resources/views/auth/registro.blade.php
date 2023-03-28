@@ -25,7 +25,6 @@
   }
 </style>
 <div class="container">
-
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center">
       <div class="bg-image"></div>
         <div class="container" id="form">
