@@ -5,6 +5,7 @@ use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\SesionController;
 use App\Http\Controllers\SecureurlController;
 use App\Http\Controllers\CerrarSesionController;
+use App\Http\Controllers\imgController;
 use App\Models\User;
 
 /*
@@ -33,3 +34,5 @@ Route::get('/{user:username}', [SecureurlController::class, 'index'])->name("acc
 Route::post('/logout', [CerrarSesionController::class, 'store'])->name('logout');
 
 Route::get('/publicaciones/create', [SecureurlController::class, 'create'])->name('publicaciones.create');
+
+Route::post('/imgs',[imgController::class, 'store'])->name('imagenes.store');
