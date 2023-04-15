@@ -15,7 +15,7 @@ class imgController extends Controller
 
         $imagenPath = public_path('uploads'). '/' . $nombreImagen;
 
-        Image::make($imagen)->save($imagenPath);
+        Image::make($imagen)->fit(800, 800)->save($imagenPath);
 
         return response()->json(['imagen' => $nombreImagen]);
     }

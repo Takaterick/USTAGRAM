@@ -147,38 +147,17 @@
               <div class="tab-content pt-2" id="borderedTabContent">
                 <div class="tab-pane fade show active" id="bordered-publicaciones" role="tabpanel" aria-labelledby="publicaciones-tab">
                   <div class="row pt-2 align-items-center justify-content-center">
-                    <div class="col-lg-3">
-                      <div class="card">
-                        <img src="assets/img/card.jpg" class="card-img-top" alt="...">
+                    @foreach($posts as $post)
+                      <div class="col-lg-3">
+                        <div class="card">
+                          <img src="{{ asset('uploads/' . $post->imagen) }}" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">{{ $post->titulo }}</h5>
+                            <p class="card-text">{{ $post->descripcion }}</p>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="col-lg-3">
-                      <div class="card">
-                        <img src="https://infoturlatam.com/wp-content/uploads/2022/09/pareja-viajera-1.jpg" class="card-img-top" alt="...">
-                      </div>
-                    </div>
-                    <div class="col-lg-3">
-                      <div class="card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfzR8tbvtI_94IcoQqrzBDdWgxVb5dcv0tOA&usqp=CAU" class="card-img-top" alt="...">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row align-items-center justify-content-center">
-                    <div class="col-lg-3">
-                      <div class="card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVB5wZashZL8neoNTRxEX4MGxOa9vnZeHVWw&usqp=CAU" class="card-img-top" alt="...">
-                      </div>
-                    </div>
-                    <div class="col-lg-3">
-                      <div class="card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLdyks21LhKTjsOabzRSA_1ZrcyGq3_dhZbo-HTtC2knNDIVY8Bm38v3YSdTNCE6av2Lk&usqp=CAU" class="card-img-top" alt="...">
-                      </div>
-                    </div>
-                    <div class="col-lg-3">
-                      <div class="card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8ULaMamFT-fV9ZydbEODFxRMtIKUZ9pEucr3mq9UPZmN1u-ZEsS9rgPjlk3YEFPY5wc8&usqp=CAU" class="card-img-top" alt="...">
-                      </div>
-                    </div>
+                    @endforeach
                   </div>
                 </div>
                 <div class="tab-pane fade" id="bordered-reels" role="tabpanel" aria-labelledby="reels-tab">
