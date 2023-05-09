@@ -21,7 +21,7 @@
           <div class="card">
             <div class="card-body profile-card pt-5 pb-4 d-flex flex-column align-items-center">
 
-              <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+              <img src="assets/img/profile-img.jpg" alt="Profile" >
               <h2>{{$user->name}}</h2>
               <h3>{{$user->programa}}</h3>
               <span class="text-muted small ps-1">{{$user->semestre}} semestre</span>
@@ -80,7 +80,6 @@
 
             </div>
           </div>
-
         </div>
         <div class="col-xl-2">
         <section class="section dashboard">
@@ -127,7 +126,7 @@
       </div>
       <div class="row">
         <div class="col-lg-12">
-        <div class="card">
+          <div class="card">
             <div class="card-body pt-3">
               <!-- Bordered Tabs -->
               <ul class="nav nav-tabs nav-tabs-bordered align-items-center justify-content-center" id="borderedTab" role="tablist">
@@ -144,20 +143,31 @@
                   <button class="nav-link" id="etiquetadas-tab" data-bs-toggle="tab" data-bs-target="#bordered-etiquetadas" type="button" role="tab" aria-controls="etiquetadas" aria-selected="false"><i class="bi bi-people"> </i>Etiquetadas</button>
                 </li>
               </ul>
-              <div class="tab-content pt-2" id="borderedTabContent">
+              <div class="tab-content pt-2 align-items-center justify-content-center" id="borderedTabContent">
                 <div class="tab-pane fade show active" id="bordered-publicaciones" role="tabpanel" aria-labelledby="publicaciones-tab">
-                  <div class="row pt-2 align-items-center justify-content-center">
-                    @foreach($posts as $post)
-                      <div class="col-lg-3">
-                        <div class="card">
-                          <img src="{{ asset('uploads/' . $post->imagen) }}" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">{{ $post->titulo }}</h5>
-                            <p class="card-text">{{ $post->descripcion }}</p>
+                  <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-9">
+                      <div class="row pt-2">
+                        @foreach($posts as $post)
+                          <div class="col-lg-4">
+                            <div class="card">
+                              <a href="{{route('publicaciones.show', ['post' => $post, 'user' => $user->username])}}">
+                                <img src="{{ asset('uploads').'/' . $post->imagen}}" class="card-img-top" alt="Imagen del post {{$post->titulo}}">
+                              </a>
+                              <div class="card-body">
+                                <h5 class="card-title">{{ $post->titulo }}</h5>
+                                <p class="card-text">{{ $post->descripcion }}</p>
+                              </div>
+                            </div>
                           </div>
-                        </div>
+                        @endforeach
                       </div>
-                    @endforeach
+                    </div>
+                  </div>
+                  <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-9">
+                    {{ $posts->links('pagination::bootstrap-5')}}
+                    </div>
                   </div>
                 </div>
                 <div class="tab-pane fade" id="bordered-reels" role="tabpanel" aria-labelledby="reels-tab">
@@ -169,10 +179,10 @@
                 <div class="tab-pane fade" id="bordered-etiquetadas" role="tabpanel" aria-labelledby="etiquetadas-tab">
                   aea
                 </div>
-              </div><!-- End Bordered Tabs -->
-
-            </div>
+              </div>
+            </div><!-- End Bordered Tabs -->
           </div>
+        </div>
       </div>
     </section>
 
@@ -189,10 +199,3 @@
     </div>
   </footer>
 @endsection
-
-
-
-   
-
-
-         

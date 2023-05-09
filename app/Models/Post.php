@@ -20,4 +20,13 @@ class Post extends Model
         #belongsto->pertenece a
         return $this->belongsTo(User::class)->select(['name', 'username']);
     }
+
+    public function comentario()
+    {
+    return $this->hasMany(Comentario::class);
+    }
+
+    public function likes(){
+        return $this->hasMany(Like::class);
+    }
 }

@@ -21,7 +21,7 @@
               <h5 class="card-title">Nueva Publicación</h5>
               <form class="row g-3" action="{{route('publicaciones.store')}}" method="POST" enctype="multipart/form-data">
               @csrf
-              <div class="col-md-12">
+                <div class="col-md-12">
                   <div class="form-floating">
                     <input name="titulo" type="text" class="form-control" id="floatingName" placeholder="Your Name">
                     <label for="floatingName">Titulo</label>

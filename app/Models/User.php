@@ -53,4 +53,9 @@ class User extends Authenticatable
         #onetomane -> un usuario tiene muchas publicaciones
         return $this->hasMany(Post::class, 'user_id');
     }
+
+    public function comentario()
+    {
+    return $this->hasMany(Comentario::class);
+    }
 }
