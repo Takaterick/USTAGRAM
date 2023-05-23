@@ -47,6 +47,13 @@ h6 {
   transition: all 0.3s;
 }
 
+/*--------------------------------------------------------------
+# Main2
+--------------------------------------------------------------*/
+#main2 {
+  padding: 0px 15px;
+}
+
 @media (max-width: 1199px) {
   #main {
     padding: 20px;
@@ -1003,6 +1010,11 @@ h6 {
 
 .profile .profile-card #imgpos {
   max-width: 400px;
+}
+
+.profile .profile-card #imgpos2 {
+  max-width: 600px;
+  height: 500px;
 }
 
 .profile .profile-card h2 {

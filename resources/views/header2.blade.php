@@ -184,7 +184,7 @@
         </li>
 
         <li>
-          <a class="dropdown-item d-flex align-items-center" href="{{route('publicaciones.create')}}">
+          <a class="dropdown-item d-flex align-items-center" href="{{route('perfil', ['user' => auth()->user()->username])}}">
             <i class="bi bi-person"></i>
             <span>Mi perfil</span>
           </a>
@@ -219,51 +219,3 @@
 </header><!-- End Header -->
 @endauth
 <!-- ======= Sidebar ======= -->
-<aside id="sidebar" class="sidebar">
-
-<ul class="sidebar-nav" id="sidebar-nav">
-
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="index.html">
-      <i class="bi bi-grid"></i>
-      <span>INICIO</span>
-    </a>
-  </li><!-- End Dashboard Nav -->
-  <li class="nav-heading">Contenido</li>
-
-  <li class="nav-item">
-    <a class="nav-link " href="users-profile.html">
-      <i class="bi bi-person"></i>
-      <span>Perfil</span>
-    </a>
-  </li><!-- End Profile Page Nav -->
-
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="pages-faq.html">
-    <i class="bi bi-people"></i>
-      <span>Amigos</span>
-    </a>
-  </li><!-- End F.A.Q Page Nav -->
-
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="pages-contact.html">
-        <i class="bi bi-images"></i>
-      <span>Fotos</span>
-    </a>
-  </li><!-- End Contact Page Nav -->
-
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="pages-register.html">
-      <i class="bi bi-card-list"></i>
-      <span>Publicaciones</span>
-    </a>
-  </li><!-- End Register Page Nav -->
-
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="pages-login.html">
-    <i class="bi bi-file-play"></i>
-      <span>Estados</span>
-    </a>
-  </li><!-- End Login Page Nav -->
-</ul>
-</aside><!-- End Sidebar-->

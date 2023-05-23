@@ -16,13 +16,22 @@ class SecureurlController extends Controller
     public function index(User $user){
         //$users = User::all();
 
-        $posts = Post::where('user_id', $user->id)->paginate(6);
+        /* $posts = Post::where('user_id', $user->id)->paginate(6);
 
         //dd($user->username);
-        return view('dashboard', [
+        return view('feed', [  
             'user'  =>   $user,
             'posts'  =>   $posts
-        ]);
+        ]); */
+
+        $users = User::with('lastpost')->get();
+        foreach($users as $user){
+            if($user->lastPost){
+                $user->lastPost->imagen = $user->lastPost->imagen;
+            }
+        }
+
+        return view('feed', compact('users'));
     }
 
     public function create(){

@@ -21,7 +21,7 @@
           <div class="card">
             <div class="card-body profile-card pt-5 pb-4 d-flex flex-column align-items-center">
 
-              <img src="assets/img/profile-img.jpg" alt="Profile" >
+              <img src="{{asset('assets/img/profile-img.jpg')}}" alt="Profile" >
               <h2>{{$user->name}}</h2>
               <h3>{{$user->programa}}</h3>
               <span class="text-muted small ps-1">{{$user->semestre}} semestre</span>
